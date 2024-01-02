@@ -24,7 +24,7 @@ jobs:
           echo "::set-output name=release_version::$RELEASE_VERSION"
       - name: Compile binaries
         run: |
-          go build -o dockercm .
+          go build -o release/dockercm .
         env:
           RELEASE_VERSION: ${{ steps.get_version.outputs.release_version }}
       - name: Save release assets
